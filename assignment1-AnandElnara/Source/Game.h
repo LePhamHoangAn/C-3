@@ -31,7 +31,7 @@ public:
 	void GameOver();
 
 	void shipbulletscollideasteroidandsplitting();
-	void shipandass();
+	void shipcollideasteroid();
 
 	void loading();
 	void unloading();

@@ -14,9 +14,9 @@ void Game::Setup()
 {
 
 	int asteroidcount = 2;
-	//asteroids	
 
-	//waves
+
+	//for the game to get harder, spawn more asteroids as the game go
 	if (gui.score > 5500)
 	{
 		asteroidcount++;
@@ -33,7 +33,8 @@ void Game::Setup()
 	{
 		asteroidcount++;
 	}
-	//asteroids	
+	
+	
 	for (int i = 0; i < asteroidcount; i++)
 	{
 		float posX   = (float)(rand() % 1000+500);
@@ -73,7 +74,7 @@ void Game::Update()
 		gui.Update();
 		Collision();
 		shipbulletscollideasteroidandsplitting();
-		shipandass();
+		shipcollideasteroid();
 
 		for (Asteroid& asteroid : asteroids)  //for each asteroid in the vector 
 		{
@@ -166,7 +167,7 @@ void Game::shipbulletscollideasteroidandsplitting()
 }
 
 
-void Game::shipandass()
+void Game::shipcollideasteroid()
 {
 	for (Asteroid& asteroid : asteroids)  //for each asteroid in the vector 
 	{

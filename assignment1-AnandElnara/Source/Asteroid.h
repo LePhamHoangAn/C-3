@@ -13,6 +13,7 @@ public:
 	float Radius{};
 	float Rotate{};
 
+	//only need to send the texture once
 	static Texture asteroidpic;
 
 

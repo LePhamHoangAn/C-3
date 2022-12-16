@@ -12,8 +12,7 @@ Asteroid::Asteroid(float size, float radius, float posX, float posY, float angle
 	position.y = posY;
 	SpeedX = speedX;
 	SpeedY = speedY;
-	Angle = angle;
-	
+	Angle = angle;	
 }
 
 void Asteroid::moving()
@@ -25,7 +24,6 @@ void Asteroid::moving()
 void Asteroid::loadtexture()
 {
 	asteroidpic = LoadTexture("Ass/asteroid.png");
-	
 }
 
 void Asteroid::drawasteroid()

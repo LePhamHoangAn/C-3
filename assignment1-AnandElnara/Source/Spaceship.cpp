@@ -13,6 +13,7 @@ Spaceship::Spaceship()
 	Velocity.x = 1;
 	Velocity.y = 1;
 	acceleration = 0;
+	teleportcooldown = 0;
 	inp = input::Idle;
 }
 
@@ -51,11 +52,14 @@ void Spaceship::Input()
 	if (IsKeyDown(KEY_SPACE))
 	{
 		IsShooting = true;
-		//screen.PlaySound(pew);
 	}
 	else
 	{
 		IsShooting = false;
+	}
+	if (IsKeyDown(KEY_DOWN) && teleportcooldown < 0)
+	{
+		inp = input::Teleport;
 	}
 }
 
@@ -93,6 +97,13 @@ void Spaceship::Movement()
 	}
 	case input::Idle:
 	{
+		break;
+	}
+	case input::Teleport:
+	{
+		Position.x = float(rand() % 1000);
+		Position.y = float(rand() % 1000);
+		teleportcooldown = 300;
 		break;
 	}
 	}
